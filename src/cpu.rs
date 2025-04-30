@@ -2,17 +2,21 @@
 
 // Define the CPU struct and its methods here
 pub struct CPU {
-    // Add fields for CPU state, such as registers and program counter
+    pub register_a: u8,
+    pub status: u8,
+    pub program_counter: u16,
 }
 
 impl CPU {
     pub fn new() -> Self {
         CPU {
-            // Initialize fields
+            register_a: 0,
+            status: 0,
+            program_counter: 0,
         }
     }
 
-    pub fn step(&mut self, memory: &mut crate::memory::Memory) {
-        // Implement CPU step logic, such as fetching, decoding, and executing instructions
+    pub fn interpret(&mut self, program: Vec<u8>) {
+        todo!("")
     }
 }
