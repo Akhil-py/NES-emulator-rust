@@ -3,6 +3,7 @@
 // Define the CPU struct and its methods here
 pub struct CPU {
     pub register_a: u8,
+    pub register_x: u8,
     pub status: u8,
     pub program_counter: u16,
 }
@@ -44,6 +45,22 @@ impl CPU {
                 }
                 0x00 => {
                     return;
+                }
+                0xAA =>  {
+                    self.register_x = self.register_a;
+                
+                    if self.register_x == 0 {
+                        self.status = self.status | 0b0000_0010;
+                    } else {
+                        self.status = self.status & 0b1111_1101;
+                    }
+    
+                    if self.register_x & 0b1000_0000 != 0 {
+                        self.status = self.status | 0b1000_0000;
+                    } else {
+                        self.status = self.status & 0b0111_1111;
+                    }
+    
                 }
                 _ => todo!()
             }
