@@ -42,6 +42,9 @@ impl CPU {
                     }
     
                 }
+                0x00 => {
+                    return;
+                }
                 _ => todo!()
             }
         }
