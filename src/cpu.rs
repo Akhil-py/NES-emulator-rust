@@ -27,6 +27,8 @@ impl CPU {
         self.update_zero_and_negative_flags(self.register_x);
     }
    
+    /// Update the zero and negative flags based on the result of an operation.
+    /// The zero flag is set if the result is zero, and the negative flag is set if the result is negative.
     fn update_zero_and_negative_flags(&mut self, result: u8) {
         if result == 0 {
              self.status = self.status | 0b0000_0010;
@@ -60,6 +62,10 @@ impl CPU {
     
                 0x00 => return, // BRK (Force Interrupt)
                 
+                0xE8 => { // INX (Increment X)
+                    self.register_x = self.register_x.wrapping_add(1);
+                    self.update_zero_and_negative_flags(self.register_x);
+                }
                 _ => todo!(),
             }
         }
