@@ -26,3 +26,8 @@ The project is organized as follows:
 - `readme.md`: Documentation for the project.
 - `Cargo.toml`: Rust project configuration file.
 - `Cargo.lock`: Dependency lock file.
+
+## Resources
+
+- https://bugzmanov.github.io/nes_ebook/chapter_3_1.html
+- https://www.nesdev.org/obelisk-6502-guide/reference.html#INX
