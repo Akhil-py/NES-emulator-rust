@@ -17,4 +17,13 @@ mod test {
         cpu.interpret(vec![0xa9, 0x00, 0x00]);
         assert!(cpu.status & 0b0000_0010 == 0b10);
     }
+
+    #[test]
+    fn test_0xaa_tax_move_a_to_x() {
+       let mut cpu = CPU::new();
+       cpu.register_a = 10;
+       cpu.interpret(vec![0xaa, 0x00]);
+ 
+       assert_eq!(cpu.register_x, 10)
+   }
 }

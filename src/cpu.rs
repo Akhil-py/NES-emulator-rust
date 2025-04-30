@@ -25,6 +25,9 @@ impl CPU {
             self.program_counter += 1;
     
             match opscode {
+                0x00 => {
+                    return;
+                }
                 0xA9 => {
                     let param = program[self.program_counter as usize];
                     self.program_counter +=1;
@@ -42,9 +45,6 @@ impl CPU {
                         self.status = self.status & 0b0111_1111;
                     }
     
-                }
-                0x00 => {
-                    return;
                 }
                 0xAA =>  {
                     self.register_x = self.register_a;
