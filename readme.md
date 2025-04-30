@@ -1,12 +1,28 @@
-![Architecture](image.png)
+![Architecture](assets/image.png)
 
 The NES is a distributed system consisting of a CPU, PPU, RAM, and APU. It also
 interfaces with game cartridges and gamepads.
-![Distributed System](image-1.png)
+![Distributed System](assets/image-1.png)
 
-![Schema](image-2.png)
+![Schema](assets/image-2.png)
 
-![NES Board](image-3.png)
+![NES Board](assets/image-3.png)
 
 CPU Memory Map and Registers:
-![CPU Memory Map and Registers](image-4.png)
+![CPU Memory Map and Registers](assets/image-4.png)
+
+## File Structure
+
+The project is organized as follows:
+
+- `src/`: Contains the source code for the emulator.
+  - `cpu.rs`: Implementation of the NES CPU.
+  - `ppu.rs`: Implementation of the Picture Processing Unit.
+  - `apu.rs`: Implementation of the Audio Processing Unit.
+  - `memory.rs`: Memory management and mapping.
+  - `main.rs`: Entry point of the emulator.
+- `tests/`: Contains unit and integration tests.
+- `assets/`: Stores resources like ROM files and test data.
+- `readme.md`: Documentation for the project.
+- `Cargo.toml`: Rust project configuration file.
+- `Cargo.lock`: Dependency lock file.
