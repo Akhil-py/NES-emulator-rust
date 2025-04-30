@@ -12,12 +12,12 @@ impl Memory {
         }
     }
 
-    pub fn read(&self, address: u16) -> u8 {
+    pub fn read(&self, _address: u16) -> u8 {
         // Implement memory read logic
         0
     }
 
-    pub fn write(&mut self, address: u16, value: u8) {
+    pub fn write(&mut self, _address: u16, _value: u8) {
         // Implement memory write logic
     }
 }

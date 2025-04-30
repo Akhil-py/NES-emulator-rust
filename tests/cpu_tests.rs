@@ -1,6 +1,6 @@
 #[cfg(test)]
 mod test {
-    use crate::cpu::CPU;
+    use nes_emulator::cpu::CPU;
 
     #[test]
     fn test_0xa9_lda_immediate_load_data() {

@@ -12,24 +12,25 @@ impl CPU {
     pub fn new() -> Self {
         CPU {
             register_a: 0,
+            register_x: 0,
             status: 0,
             program_counter: 0,
         }
     }
 
-    fn lda(&mut self, value: u8) {
+    pub fn lda(&mut self, value: u8) {
         self.register_a = value;
         self.update_zero_and_negative_flags(self.register_a);
     }
   
-    fn tax(&mut self) {
+    pub fn tax(&mut self) {
         self.register_x = self.register_a;
         self.update_zero_and_negative_flags(self.register_x);
     }
    
     /// Update the zero and negative flags based on the result of an operation.
     /// The zero flag is set if the result is zero, and the negative flag is set if the result is negative.
-    fn update_zero_and_negative_flags(&mut self, result: u8) {
+    pub fn update_zero_and_negative_flags(&mut self, result: u8) {
         if result == 0 {
              self.status = self.status | 0b0000_0010;
         } else {
